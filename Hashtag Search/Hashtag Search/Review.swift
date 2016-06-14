@@ -13,6 +13,18 @@ class Review {
     let username: String
     let text: String
     
+    var hashtags: [String] {
+        let words = text.componentsSeparatedByString(" ")
+        var hashtagsArray: [String] = []
+        for word in words {
+            if word.hasPrefix("#") {
+                hashtagsArray.append(word)
+            }
+        }
+        
+        return hashtagsArray
+    }
+    
     init(username: String, text: String) {
         
         self.username = username

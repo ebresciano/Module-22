@@ -14,9 +14,9 @@ class Restaurant {
     let streetAddress: String
     let city: String
     let state: String
-    let reviews: [String]
+    var reviews: [Review] = []
     
-    init(name: String, streetAddress: String, city: String, state: String, reviews: [String]) {
+    init(name: String, streetAddress: String, city: String, state: String, reviews: [Review] = []) {
         
         self.name = name
         self.streetAddress = streetAddress
@@ -26,7 +26,13 @@ class Restaurant {
         
     }
     
+}
+
     var restaurants = ["Amato's", "Amighetti's Bakery", "Angelo's Civita Farnese","Ask", "Barbetta", "Bella Italia", "Beppi's Restaurant", "Bertucci's", "BiCE Ristorante"]
     
-    var restaurant1: Restaurant = (name: "Amatos", streetAddress: "48 Portland Road", city: "Portland", state: "Oregon", reviews: ["It was everything we would've expected a fast food #Italian joint to be"])
-}
+    var restaurant1 = Restaurant(name: "Amatos", streetAddress: "48 Portland Road", city: "Portland", state: "Oregon")
+
+    var review1 = Review(username: "Beep", text: "It was everything we would've expected a fast food #Italian joint to be #Food")
+
+
+
