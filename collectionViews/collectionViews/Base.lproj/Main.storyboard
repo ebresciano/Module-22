@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RAt-bp-U5s">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Image Collection View Controller-->
+        <scene sceneID="lCZ-dS-eKE">
+            <objects>
+                <collectionViewController id="RAt-bp-U5s" customClass="ImageCollectionViewController" customModule="collectionViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xzI-6A-AC3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mTb-b9-EQS">
+                            <size key="itemSize" width="165" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <tableViewCell key="backgroundView" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BZe-8D-Qfb">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZe-8D-Qfb" id="slO-vq-EvZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="599.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </tableViewCellContentView>
+                        </tableViewCell>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="g1n-mu-Tor" customClass="ImageCollectionViewCell" customModule="collectionViews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECW-iB-6zv">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="150"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="ECW-iB-6zv" firstAttribute="leading" secondItem="g1n-mu-Tor" secondAttribute="leading" id="6Ey-4d-cR6"/>
+                                    <constraint firstItem="ECW-iB-6zv" firstAttribute="top" secondItem="g1n-mu-Tor" secondAttribute="top" id="Tex-Pb-nhS"/>
+                                    <constraint firstAttribute="bottom" secondItem="ECW-iB-6zv" secondAttribute="bottom" id="h43-j3-yls"/>
+                                    <constraint firstAttribute="trailing" secondItem="ECW-iB-6zv" secondAttribute="trailing" id="mTc-AX-rvG"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="ECW-iB-6zv" id="yKc-pT-1gU"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="RAt-bp-U5s" id="TdF-26-Y8B"/>
+                            <outlet property="delegate" destination="RAt-bp-U5s" id="gwk-A6-bBy"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCO-Mi-cLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="365"/>
+        </scene>
+    </scenes>
+</document>
