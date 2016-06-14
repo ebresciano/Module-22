@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppleViewControllers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vYb-uJ-NPu">
+                                <rect key="frame" x="20" y="28" width="560" height="356"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="356" id="z5G-rZ-CCq"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YaR-Ku-3Wj" appends="YES" id="Cw9-jD-dZq"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="0Ox-f9-KfM">
+                                <rect key="frame" x="242" y="392" width="117" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX8-AJ-sUq">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Email"/>
+                                        <connections>
+                                            <action selector="emailTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ME9-c1-Epl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5T-Ir-Clh">
+                                        <rect key="frame" x="77" y="0.0" width="40" height="30"/>
+                                        <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnu-Ey-UM6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irE-o8-JJJ">
+                                <rect key="frame" x="215" y="550" width="170" height="30"/>
+                                <state key="normal" title="Get Image From Browser"/>
+                                <connections>
+                                    <action selector="getImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8T-pQ-cRD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vYb-uJ-NPu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4cU-h3-qUJ"/>
+                            <constraint firstItem="0Ox-f9-KfM" firstAttribute="top" secondItem="vYb-uJ-NPu" secondAttribute="bottom" constant="8" symbolic="YES" id="ApW-hR-N5Z"/>
+                            <constraint firstItem="vYb-uJ-NPu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Cfc-d2-mTb"/>
+                            <constraint firstAttribute="bottom" secondItem="irE-o8-JJJ" secondAttribute="bottom" constant="20" symbolic="YES" id="DRj-Ew-NfA"/>
+                            <constraint firstItem="0Ox-f9-KfM" firstAttribute="centerX" secondItem="irE-o8-JJJ" secondAttribute="centerX" id="HsT-c1-zhQ"/>
+                            <constraint firstItem="vYb-uJ-NPu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yt4-wh-hYd"/>
+                            <constraint firstItem="vYb-uJ-NPu" firstAttribute="centerX" secondItem="0Ox-f9-KfM" secondAttribute="centerX" id="zJg-Lz-hwR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="vYb-uJ-NPu" id="iJv-24-CnV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YaR-Ku-3Wj">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="gSy-8S-fW7"/>
+                        <outlet property="delegate" destination="vYb-uJ-NPu" id="enc-cb-h7j"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="238" y="288"/>
+        </scene>
+    </scenes>
+</document>
